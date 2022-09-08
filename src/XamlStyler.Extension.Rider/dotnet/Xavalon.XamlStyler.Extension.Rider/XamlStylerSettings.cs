@@ -113,6 +113,12 @@ namespace Xavalon.XamlStyler.Extension.Rider
 
         [SettingsEntry(DefaultValue: "x:Bind, Binding", Description: "Defines a comma-separated list of Markup Extensions that are always kept on a single line\nDefault Value: x:Bind, Binding")]
         public string NoNewLineMarkupExtensions { get; set; }
+        
+        [SettingsEntry(DefaultValue: 1, Description: "Defines the number of spaces that Markup Extension arguments are indented on elements with more than one line of arguments. A value of 0 will use the default indentation. A value of -1 will align arguments with the first attribute if that is on the same line.\r\n\r\nDefault Value: -1")]
+        public int MarkupExtensionIndentation { get; set; }
+
+        [SettingsEntry(DefaultValue: true, Description: "Defines whether the first line of argument(s) should appear on the same line as the markup extensions's name.\r\n\r\nDefault Value: true")]
+        public bool KeepFirstMarkupExtensionArgumentOnSameLine { get; set; }
 
         #endregion Markup Extension
 

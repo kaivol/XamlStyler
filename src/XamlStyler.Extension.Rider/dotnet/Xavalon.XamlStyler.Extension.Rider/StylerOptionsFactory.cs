@@ -67,6 +67,8 @@ namespace Xavalon.XamlStyler.Extension.Rider
             stylerOptions.ReorderSetters = settings.GetValue((XamlStylerSettings s) => s.ReorderSetters);
             stylerOptions.FormatMarkupExtension = settings.GetValue((XamlStylerSettings s) => s.FormatMarkupExtension);
             stylerOptions.NoNewLineMarkupExtensions = settings.GetValue((XamlStylerSettings s) => s.NoNewLineMarkupExtensions);
+            stylerOptions.MarkupExtensionIndentation = settings.GetValue((XamlStylerSettings s) => s.MarkupExtensionIndentation);
+            stylerOptions.KeepFirstMarkupExtensionArgumentOnSameLine = settings.GetValue((XamlStylerSettings s) => s.KeepFirstMarkupExtensionArgumentOnSameLine);
             stylerOptions.ThicknessStyle = settings.GetValue((XamlStylerSettings s) => s.ThicknessStyle);
             stylerOptions.ThicknessAttributes = settings.GetValue((XamlStylerSettings s) => s.ThicknessAttributes);
             stylerOptions.FormatOnSave = settings.GetValue((XamlStylerSettings s) => s.FormatOnSave);

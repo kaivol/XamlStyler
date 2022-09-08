@@ -107,6 +107,12 @@ namespace Xavalon.XamlStyler.Console
 
         [Option("no-newline-markup-extensions", HelpText = "Override: no newline markup extensions.")]
         public string NoNewLineMarkupExtensions { get; set; }
+        
+        [Option("markup-extension-indentation", HelpText = "Override: markup extensions indentation.")]
+        public int? MarkupExtensionIndentation { get; set; }
+
+        [Option("keep-first-markup-extensions-argument-on-same-line", HelpText = "Override: keep first markup extensions argument on same line.")]
+        public bool? KeepFirstMarkupExtensionArgumentOnSameLine { get; set; }
 
         [Option("thickness-style", HelpText = "Override: thickness style.")]
         public ThicknessStyle? ThicknessStyle { get; set; }

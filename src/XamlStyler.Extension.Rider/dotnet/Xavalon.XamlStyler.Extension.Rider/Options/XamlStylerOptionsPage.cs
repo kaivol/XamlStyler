@@ -123,7 +123,9 @@ namespace Xavalon.XamlStyler.Extension.Rider.Options
             AddBinding(noNewLineMarkupExtensionsOption, BindingStyle.IsEnabledProperty,
                 (XamlStylerSettings x) => x.FormatMarkupExtension,
                 x => (bool)x);
-            
+            AddSpinner((XamlStylerSettings x) => x.MarkupExtensionIndentation, "Markup extension indentation:");
+            AddBoolOption((XamlStylerSettings x) => x.KeepFirstMarkupExtensionArgumentOnSameLine, "Keep first markup extension argument on same line");
+
             // Thickness formatting
             AddHeader("Thickness formatting");
             AddComboEnum((XamlStylerSettings x) => x.ThicknessStyle, "Thickness separator:");

@@ -151,6 +151,16 @@ namespace Xavalon.XamlStyler.Console
                 stylerOptions.NoNewLineMarkupExtensions = options.NoNewLineMarkupExtensions;
             }
 
+            if (options.MarkupExtensionIndentation != null)
+            {
+                stylerOptions.MarkupExtensionIndentation = options.MarkupExtensionIndentation.Value;
+            }
+
+            if (options.KeepFirstMarkupExtensionArgumentOnSameLine != null)
+            {
+                stylerOptions.KeepFirstMarkupExtensionArgumentOnSameLine = options.KeepFirstMarkupExtensionArgumentOnSameLine.Value;
+            }
+
             if (options.ThicknessStyle != null)
             {
                 stylerOptions.ThicknessStyle = options.ThicknessStyle.Value;

@@ -34,6 +34,8 @@
   "ReorderSetters": 0,
   "FormatMarkupExtension": true,
   "NoNewLineMarkupExtensions": "x:Bind, Binding",
+  "MarkupExtensionIndentation": -1,
+  "KeepFirstMarkupExtensionArgumentOnSameLine": true,
   "ThicknessSeparator": 2,
   "ThicknessAttributes": "Margin, Padding, BorderThickness, ThumbnailClipMargin",
   "FormatOnSave": true,

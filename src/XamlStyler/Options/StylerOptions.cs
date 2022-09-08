@@ -250,7 +250,21 @@ namespace Xavalon.XamlStyler.Options
         [Description("Defines a comma-separated list of Markup Extensions that are always kept on a single line\r\n\r\nDefault Value: x:Bind, Binding")]
         [DefaultValue("x:Bind, Binding")]
         public string NoNewLineMarkupExtensions { get; set; }
+        
+        [Category("Markup Extension")]
+        [DisplayName("Markup Extension argument indentation")]
+        [JsonProperty("MarkupExtensionIndentation", DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate)]
+        [Description("Defines the number of spaces that Markup Extension arguments are indented on elements with more than one line of arguments. A value of 0 will use the default indentation. A value of -1 will align arguments with the first attribute if that is on the same line.\r\n\r\nDefault Value: -1")]
+        [DefaultValue(-1)]
+        public int MarkupExtensionIndentation { get; set; }
 
+        [Category("Attribute Formatting")]
+        [DisplayName("Keep first attribute on same line")]
+        [JsonProperty("KeepFirstMarkupExtensionArgumentOnSameLine", DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate)]
+        [Description("Defines whether the first line of argument(s) should appear on the same line as the markup extensions's name.\r\n\r\nDefault Value: true")]
+        [DefaultValue(true)]
+        public bool KeepFirstMarkupExtensionArgumentOnSameLine { get; set; }
+        
         // Thickness formatting
         [Category("Thickness formatting")]
         [DisplayName("Thickness separator")]

@@ -88,6 +88,10 @@ namespace Xavalon.XamlStyler.Options
         bool FormatMarkupExtension { get; set; }
 
         string NoNewLineMarkupExtensions { get; set; }
+        
+        int MarkupExtensionIndentation { get; set; }
+
+        bool KeepFirstMarkupExtensionArgumentOnSameLine { get; set; }
 
         #endregion Markup Extension
 
