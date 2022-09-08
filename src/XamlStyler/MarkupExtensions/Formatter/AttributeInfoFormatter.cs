@@ -42,24 +42,18 @@ namespace Xavalon.XamlStyler.MarkupExtensions.Formatter
                     MethodBase.GetCurrentMethod().GetParameters()[0].Name);
             }
 
-            if (attrInfo.IsMarkupExtension)
+            var lines = this.formatter.Format(attrInfo.MarkupExtension, attrInfo.Name.Length + 2);
+
+            var buffer = new StringBuilder();
+            buffer.AppendFormat(CultureInfo.InvariantCulture, "{0}=\"{1}", attrInfo.Name, lines.First());
+            foreach (var line in lines.Skip(1))
             {
-                string currentIndentationString = $"{baseIndentationString}{String.Empty.PadLeft(attrInfo.Name.Length + 2, ' ')}";
-                var lines = this.formatter.Format(attrInfo.MarkupExtension);
-
-                var buffer = new StringBuilder();
-                buffer.AppendFormat(CultureInfo.InvariantCulture, "{0}=\"{1}", attrInfo.Name, lines.First());
-                foreach (var line in lines.Skip(1))
-                {
-                    buffer.AppendLine();
-                    buffer.Append(this.indentService.Normalize(currentIndentationString + line));
-                }
-
-                buffer.Append('"');
-                return buffer.ToString();
+                buffer.AppendLine();
+                buffer.Append(this.indentService.Normalize(baseIndentationString + line));
             }
 
-            return $"{attrInfo.Name}=\"{attrInfo.Value}\"";
+            buffer.Append('"');
+            return buffer.ToString();
         }
 
         /// <summary>

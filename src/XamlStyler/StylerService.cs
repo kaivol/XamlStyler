@@ -81,7 +81,7 @@ namespace Xavalon.XamlStyler
         private void ApplyOptions(IList<string> ignoredNamespacesPrefixes, bool ignoreDesignTimeReferencePrefix)
         {
             var indentService = new IndentService(options);
-            var markupExtensionFormatter = new MarkupExtensionFormatter(options.NoNewLineMarkupExtensions.ToList());
+            var markupExtensionFormatter = new MarkupExtensionFormatter(options);
             var attributeInfoFactory = new AttributeInfoFactory(new MarkupExtensionParser(), new AttributeOrderRules(options), ignoredNamespacesPrefixes, ignoreDesignTimeReferencePrefix);
             var attributeInfoFormatter = new AttributeInfoFormatter(markupExtensionFormatter, indentService);
 

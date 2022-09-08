@@ -518,7 +518,9 @@ namespace Xavalon.XamlStyler.UnitTests
                 : testFile;
 
             // Exercise stylerService using supplied test XAML data
-            string actualOutput = stylerService.StyleDocument(File.ReadAllText($"{testFile}.testxaml"));
+            string actualOutput = stylerService
+                .StyleDocument(File.ReadAllText($"{testFile}.testxaml"))
+                .Replace(Environment.NewLine, "\n");
 
             // Write output to ".actual" file for further investigation
             File.WriteAllText($"{testFileResultBaseName}.actual", actualOutput, Encoding.UTF8);
